@@ -171,6 +171,11 @@ module.exports = function (webpackEnv) {
   };
 
   return {
+    // Custom config for Stock Scripts / Trad3r
+    // Use relative path symlink instead of absolute paths
+    resolve: {
+      symlinks: false
+    },
     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
     // Stop compilation early in production
     bail: isEnvProduction,
