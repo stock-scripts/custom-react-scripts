@@ -410,7 +410,12 @@ module.exports = function (webpackEnv) {
             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
             {
               test: /\.(js|mjs|jsx|ts|tsx)$/,
-              include: paths.appSrc,
+              include: [
+                paths.appSrc,
+                // Custom Stock Scripts / Trad3r config
+                // Process symlinked ts files from the graphql/src directory
+                path.resolve(__dirname, './../graphql/src')
+              ],
               loader: require.resolve('babel-loader'),
               options: {
                 customize: require.resolve(
