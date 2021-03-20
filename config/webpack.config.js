@@ -171,11 +171,6 @@ module.exports = function (webpackEnv) {
   };
 
   return {
-    // Custom config for Stock Scripts / Trad3r
-    // Use relative path symlink instead of absolute paths
-    resolve: {
-      symlinks: false
-    },
     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
     // Stop compilation early in production
     bail: isEnvProduction,
@@ -414,7 +409,6 @@ module.exports = function (webpackEnv) {
                 paths.appSrc,
                 // Custom Stock Scripts / Trad3r config
                 // Process symlinked ts files from the graphql/src directory
-                // path.resolve(__dirname, './../graphql/src')
                 '/srv/graphql/src'
               ],
               loader: require.resolve('babel-loader'),
