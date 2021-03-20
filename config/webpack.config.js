@@ -414,7 +414,8 @@ module.exports = function (webpackEnv) {
                 paths.appSrc,
                 // Custom Stock Scripts / Trad3r config
                 // Process symlinked ts files from the graphql/src directory
-                path.resolve(__dirname, './../graphql/src')
+                // path.resolve(__dirname, './../graphql/src')
+                '/srv/graphql/src'
               ],
               loader: require.resolve('babel-loader'),
               options: {
